@@ -1,0 +1,30 @@
+# ---- secrets (never commit) ----
+.env
+.env.*
+*.key
+cdsapirc
+
+# ---- environments / caches ----
+.venv/
+.venv-fm/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.cache/
+hf_cache/
+*.tmp
+*.log
+
+# ---- raw / intermediate data (processed Parquet is shipped; provenance in data/manifest.csv) ----
+data/raw/
+data/validated_raw/
+data/external/
+data/processed/xgb_cache/
+*.nc
+*.zarr/
+
+# ---- OS / editor ----
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

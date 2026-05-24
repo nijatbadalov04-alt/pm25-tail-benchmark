@@ -1,0 +1,22 @@
+# AQ-FM-Bench — MOIRAI environment (.venv-fm). Python 3.11.
+#
+# Moirai-1.1-R-base (uni2ts) is isolated here because uni2ts pins an older torch; we force the
+# cu128 build (verified compatible) so Moirai runs on the Blackwell GPU. Install torch FIRST:
+#     uv pip install torch==2.11.0 --index-url https://download.pytorch.org/whl/cu128
+# then:  uv pip install -r requirements-fm.txt
+#
+# This env is ONLY needed to regenerate Moirai predictions (scripts/run_moirai.py,
+# scripts/dump_moirai_*.py). The leaderboard + F1 replication read Moirai's cached predictions,
+# so most users never need this environment. Note numpy is 1.26.x here (vs 2.x in the main env) —
+# that incompatibility is exactly why the two environments are separate.
+torch==2.11.0+cu128
+uni2ts==2.0.0
+gluonts==0.14.4
+numpy==1.26.4
+pandas==2.1.4
+einops==0.7.0
+jaxtyping==0.2.38
+lightning==2.6.4
+huggingface-hub==1.16.1
+safetensors==0.7.0
+hydra-core==1.3.0

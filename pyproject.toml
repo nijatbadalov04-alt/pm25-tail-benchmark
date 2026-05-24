@@ -1,0 +1,53 @@
+[project]
+name = "aq-fm-bench"
+version = "0.1.0"
+description = "A multi-city benchmark for time-series foundation models on urban air quality, with conformal uncertainty and regime-shift evaluation."
+readme = "README.md"
+requires-python = ">=3.11,<3.12"
+license = { text = "MIT" }
+authors = [{ name = "Nijat Badalov" }]
+
+# NOTE: torch is installed separately from the CUDA 12.8 index (Blackwell sm_120):
+#   uv pip install torch --index-url https://download.pytorch.org/whl/cu128
+# It is intentionally NOT pinned here so the cu128 build is not overwritten by a CPU wheel.
+dependencies = [
+    "numpy",
+    "pandas",
+    "polars",
+    "pyarrow",
+    "scipy",
+    "statsmodels",
+    "scikit-learn",
+    "xarray",
+    "netcdf4",
+    "zarr",
+    "gcsfs",            # ARCO-ERA5 public GCS access
+    "requests",
+    "openaq",           # OpenAQ v3 SDK
+    "pyyaml",
+    "xgboost",
+    "matplotlib",
+    "seaborn",
+    "tqdm",
+    "pytest",
+]
+
+[project.optional-dependencies]
+# Optional dependency groups, so a failure installing one group does not block the others.
+fm = ["transformers", "accelerate", "safetensors", "chronos-forecasting", "uni2ts", "timesfm"]
+dl = ["darts"]
+conformal = ["mapie"]
+geo = ["cartopy"]
+track = ["hydra-core", "wandb"]
+aurn = ["pyreadr"]      # read DEFRA AURN .RData directly (pyaurn fallback)
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/aq_fm_bench"]
+
+[tool.uv]
+# Keep torch off uv's resolver so it never tries to replace the cu128 build.
+override-dependencies = []

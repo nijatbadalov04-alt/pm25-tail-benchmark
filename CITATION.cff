@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use AQ-FM-Bench, please cite it as below."
+title: "AQ-FM-Bench: A Significance-Tested Benchmark of Time-Series Foundation Models for UK Urban Air-Quality Forecasting, with Meteorology-Stratified Conformal Calibration"
+abstract: >-
+  A reproducible, significance-tested benchmark evaluating naive baselines, classical models
+  (Ridge, XGBoost), and three time-series foundation models (Chronos-Bolt, TimesFM-2.0,
+  Moirai-1.1) on hourly NO2 and PM2.5 forecasting across four UK cities (eight reference-grade
+  DEFRA AURN stations), 2019-2024, at 24/72/168-hour horizons, with ERA5 covariates, conformal
+  uncertainty, and a focus on high-pollution episodes. Includes the MM-CP conformal method.
+type: software
+authors:
+  - family-names: Badalov
+    given-names: Nijat
+version: 1.0.0
+date-released: "2026-05-24"
+license: MIT
+repository-code: "https://github.com/nijatbadalov04-alt/pm25-tail-benchmark"
+keywords:
+  - time-series foundation models
+  - air quality
+  - conformal prediction
+  - uncertainty quantification
+  - benchmark
+  - NO2
+  - PM2.5
+  - Chronos
+  - TimesFM
+  - Moirai
+# A Zenodo DOI will be minted on the v1.0.0 release tag and added here (and to the README badge).

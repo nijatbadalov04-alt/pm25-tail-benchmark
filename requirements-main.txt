@@ -1,0 +1,43 @@
+# AQ-FM-Bench — MAIN environment (.venv, GPU). Python 3.11.
+#
+# torch is installed SEPARATELY from the CUDA 12.8 index (Blackwell sm_120 / RTX 50-series).
+# Install it FIRST so a CPU wheel never overwrites the cu128 build:
+#     uv pip install torch==2.11.0 --index-url https://download.pytorch.org/whl/cu128
+# then:  uv pip install -r requirements-main.txt
+#
+# NOTE: the minimal F1 replication (scripts/reproduce_f1.py) needs none of the GPU/FM stack —
+# `uv pip install -e .` (core deps) is enough. This file is for the FULL leaderboard pipeline.
+torch==2.11.0+cu128
+
+# core
+numpy==2.4.6
+pandas==3.0.3
+polars==1.41.0
+pyarrow==24.0.0
+scipy==1.17.1
+statsmodels==0.14.6
+scikit-learn==1.8.0
+xgboost==3.2.0
+
+# data / IO
+rdata==1.0.0            # parse DEFRA AURN .RData (pure-Python)
+xarray==2026.4.0
+netcdf4==1.7.4
+zarr==3.1.6
+gcsfs==2026.5.0         # ARCO-ERA5 cross-validation (public GCS)
+openaq==0.7.0           # station discovery / cross-check only
+pyyaml==6.0.3
+tqdm==4.67.3
+
+# foundation models that run in this env (Chronos-Bolt, TimesFM-2.0)
+transformers==4.57.6
+accelerate==1.13.0
+safetensors==0.7.0
+chronos-forecasting==2.2.2
+timesfm==1.3.0
+jax==0.10.1             # TimesFM covariate (XReg) path
+jaxlib==0.10.1
+
+# figures
+matplotlib==3.10.9
+seaborn==0.13.2

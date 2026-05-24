@@ -1,0 +1,28 @@
+pollutant,comparison,a,b,mean_diff_a_minus_b,dm_stat,p_raw,n,p_raw_lag1,q_bh,significant_bh
+NO2,seasonal_naive_24h vs persistence,persistence,seasonal_naive_24h,-0.9082,-3.29,0.0011,595,0.0017,0.0011,True
+NO2,seasonal_naive_168h vs persistence,persistence,seasonal_naive_168h,-1.5272,-4.343,0.0,595,0.0002,0.0,True
+NO2,linear_no_oracle vs persistence,persistence,linear_no_oracle,1.7201,6.523,0.0,595,0.0,0.0,True
+NO2,linear_oracle vs persistence,persistence,linear_oracle,2.7195,10.193,0.0,595,0.0,0.0,True
+NO2,chronos_bolt_base vs persistence,persistence,chronos_bolt_base,2.4863,9.87,0.0,595,0.0,0.0,True
+NO2,timesfm_2_wx vs persistence,persistence,timesfm_2_wx,3.4286,14.521,0.0,595,0.0,0.0,True
+NO2,moirai_1_1_zeroshot vs persistence,persistence,moirai_1_1_zeroshot,1.6422,7.336,0.0,595,0.0,0.0,True
+NO2,moirai_1_1_wx vs persistence,persistence,moirai_1_1_wx,1.2181,5.552,0.0,595,0.0,0.0,True
+NO2,xgboost_no_oracle vs persistence,persistence,xgboost_no_oracle,2.5829,10.265,0.0,595,0.0,0.0,True
+NO2,xgboost vs persistence,persistence,xgboost,5.0032,18.733,0.0,595,0.0,0.0,True
+NO2,F2 Chronos vs XGB-no-weather,chronos_bolt_base,xgboost_no_oracle,0.0967,0.649,0.5166,595,0.547,0.5166,False
+NO2,F3a TimesFM+wx vs Chronos,chronos_bolt_base,timesfm_2_wx,0.9423,6.905,0.0,595,0.0,0.0,True
+NO2,F3b XGBoost vs TimesFM+wx,timesfm_2_wx,xgboost,1.5747,10.268,0.0,595,0.0,0.0,True
+NO2,F4 nonlin|weather (lin_orc vs xgb),linear_oracle,xgboost,2.2837,17.707,0.0,595,0.0,0.0,True
+NO2,F4 nonlin|no-weather,linear_no_oracle,xgboost_no_oracle,0.8628,7.262,0.0,595,0.0,0.0,True
+NO2,F6 Moirai wx vs zeroshot,moirai_1_1_zeroshot,moirai_1_1_wx,-0.4241,-3.928,0.0001,595,0.0002,0.0001,True
+PM2.5,seasonal_naive_24h vs persistence,persistence,seasonal_naive_24h,-0.0023,-0.011,0.9911,521,0.9912,0.9911,False
+PM2.5,seasonal_naive_168h vs persistence,persistence,seasonal_naive_168h,-1.4543,-5.129,0.0,521,0.0,0.0,True
+PM2.5,linear_no_oracle vs persistence,persistence,linear_no_oracle,0.2728,1.214,0.2251,521,0.1875,0.2752,False
+PM2.5,linear_oracle vs persistence,persistence,linear_oracle,0.1009,0.45,0.6527,521,0.6203,0.718,False
+PM2.5,chronos_bolt_base vs persistence,persistence,chronos_bolt_base,1.0543,4.76,0.0,521,0.0,0.0,True
+PM2.5,timesfm_2_wx vs persistence,persistence,timesfm_2_wx,1.2105,5.694,0.0,521,0.0,0.0,True
+PM2.5,moirai_1_1_zeroshot vs persistence,persistence,moirai_1_1_zeroshot,0.7316,4.044,0.0001,521,0.0001,0.0001,True
+PM2.5,moirai_1_1_wx vs persistence,persistence,moirai_1_1_wx,0.6427,3.361,0.0008,521,0.0009,0.0013,True
+PM2.5,xgboost_no_oracle vs persistence,persistence,xgboost_no_oracle,0.7578,3.516,0.0005,521,0.0005,0.0009,True
+PM2.5,xgboost vs persistence,persistence,xgboost,1.1004,4.875,0.0,521,0.0,0.0,True
+PM2.5,F5 TimesFM+wx vs XGBoost,xgboost,timesfm_2_wx,0.11,1.56,0.1194,521,0.1395,0.1642,False
